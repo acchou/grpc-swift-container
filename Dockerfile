@@ -9,4 +9,4 @@ COPY . /tmp/
 
 WORKDIR /tmp
 
-RUN swift build
+RUN swift build -v
