@@ -1,12 +1,12 @@
-FROM swift:latest
+FROM swift:3.1
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get -q install -y \
     libz-dev \
     unzip \
  && rm -rf /var/lib/apt/lists/*
- 
-COPY . /tmp/
 
-WORKDIR /tmp
+WORKDIR /workspace
 
-RUN swift build -v
+COPY . .
+
+RUN swift build -Xlinker -lz
