@@ -9,4 +9,5 @@ WORKDIR /workspace
 
 COPY . .
 
+
 RUN swift build -Xlinker -lz
